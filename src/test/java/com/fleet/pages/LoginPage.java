@@ -1,5 +1,6 @@
 package com.fleet.pages;
 
+import com.fleet.utilities.ConfigurationReader;
 import com.fleet.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
