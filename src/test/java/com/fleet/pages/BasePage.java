@@ -35,6 +35,9 @@ public abstract class BasePage {
     @FindBy(linkText = "My User")
     public WebElement myUser;
 
+    @FindBy(linkText = "Learn how to use this space")
+    public WebElement learnHowToUseThisSpace;
+
     public BasePage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
