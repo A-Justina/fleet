@@ -6,7 +6,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 
-public class VehicleContractsStepDefs {
+public class US004VehicleContractsStepDefs {
 
     @When("I click on the Fleet link")
     public void i_click_on_the_fleet_link() {
