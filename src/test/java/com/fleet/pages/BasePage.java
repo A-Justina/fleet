@@ -36,11 +36,16 @@ public abstract class BasePage {
     @FindBy(linkText = "My User")
     public WebElement myUser;
 
+
     @FindBy (xpath = "(//li//a[@href='#']//span[@class='title title-level-1'])[6]")
     public  WebElement marketingDropdown;
 
     @FindBy(xpath = "//a[@href='/campaign/']")
     public WebElement campaignButton;
+
+    @FindBy(linkText = "Learn how to use this space")
+    public WebElement learnHowToUseThisSpace;
+ master
 
     public BasePage() {
         PageFactory.initElements(Driver.getDriver(), this);
