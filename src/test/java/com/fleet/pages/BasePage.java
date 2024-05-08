@@ -11,6 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.security.cert.X509Certificate;
 import java.time.Duration;
 import java.util.List;
 
@@ -35,8 +36,16 @@ public abstract class BasePage {
     @FindBy(linkText = "My User")
     public WebElement myUser;
 
+
+    @FindBy (xpath = "(//li//a[@href='#']//span[@class='title title-level-1'])[6]")
+    public  WebElement marketingDropdown;
+
+    @FindBy(xpath = "//a[@href='/campaign/']")
+    public WebElement campaignButton;
+
     @FindBy(linkText = "Learn how to use this space")
     public WebElement learnHowToUseThisSpace;
+ master
 
     @FindBy(xpath = "//li[3]/a/span/i")
     public WebElement activitiesBtn;
