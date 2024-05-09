@@ -45,10 +45,12 @@ public abstract class BasePage {
 
     @FindBy(linkText = "Learn how to use this space")
     public WebElement learnHowToUseThisSpace;
- master
+
 
     @FindBy(xpath = "//li[3]/a/span/i")
     public WebElement activitiesBtn;
+
+    public WebElement vehicleContractBtn;
 
 
     public BasePage() {

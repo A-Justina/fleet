@@ -7,6 +7,6 @@ Feature: Users should be able to login
 
    Scenario: As a user, I want to access to Vehicle contracts page
      When I click on the Fleet link
-     Then I should be able to access the Vehicle contract link and click on it
+     Then I should be able to access the Vehicle contract link
      And I should be able to access the Vehicle contract page
 
