@@ -36,7 +36,6 @@ public abstract class BasePage {
     @FindBy(linkText = "My User")
     public WebElement myUser;
 
-
     @FindBy (xpath = "(//li//a[@href='#']//span[@class='title title-level-1'])[6]")
     public  WebElement marketingDropdown;
 
@@ -46,9 +45,11 @@ public abstract class BasePage {
     @FindBy(linkText = "Learn how to use this space")
     public WebElement learnHowToUseThisSpace;
 
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/ul/li[3]/a/span")
+    public WebElement activitiesBtnDriver;
 
-    @FindBy(xpath = "//li[3]/a/span/i")
-    public WebElement activitiesBtn;
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/ul/li[5]/a/span")
+    public WebElement activitiesBtnManager;
 
     @FindBy(xpath = "//*[@id=\"main-menu\"]/ul/li[2]/a/span")
     public WebElement fleetBtnManager; // this is for storeManager
