@@ -19,6 +19,11 @@ public class VehicleContractsPage extends BasePage {
     @FindBy(xpath = "//*[@id=\"main-menu\"]/ul/li[2]/div/div/ul/li[6]/a/span")
     public WebElement vehicleContractsBtnManager;
 
+    @FindBy (xpath = "//div[.='You do not have permission to perform this action.']")
+    public WebElement driverErrorMessage;
+
+    @FindBy (xpath = "//*[@id=\"main-menu\"]/ul/li[1]/div/div/ul/li[6]/a/span")
+    public WebElement vehicleContractsBtnDriver;
 
 
 }

@@ -53,7 +53,10 @@ public abstract class BasePage {
     @FindBy(xpath = "//*[@id=\"main-menu\"]/ul/li[2]/a/span")
     public WebElement fleetBtnManager; // this is for storeManager
 
-    public WebElement vehicleContractBtn;
+
+
+    @FindBy(xpath = "(//div[@id='main-menu']/ul/li[@class='dropdown dropdown-level-1'])[1]")
+    public WebElement fleetBtnDriver;
 
 
 
