@@ -16,8 +16,8 @@ public class VehicleContractsPage extends BasePage {
     @FindBy(xpath = "//*[@id=\"main-menu\"]/ul/li[2]/a/span")
     public WebElement fleetBtnManager;
 
-    @FindBy(xpath = "//*[@class=\"dropdown-menu-wrapper dropdown-menu-wrapper__scrollable\"]")
-    public WebElement vehicleContractBtn;
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/ul/li[2]/div/div/ul/li[6]/a/span")
+    public WebElement vehicleContractsBtnManager;
 
 
 
