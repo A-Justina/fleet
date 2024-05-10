@@ -9,9 +9,6 @@ public class VehicleContractsPage extends BasePage {
 
 
 
-    public VehicleContractsPage(){
-        PageFactory.initElements(Driver.getDriver(), this);
-    }
 
     @FindBy(xpath = "//*[@id=\"main-menu\"]/ul/li[2]/a/span")
     public WebElement fleetBtnManager;
