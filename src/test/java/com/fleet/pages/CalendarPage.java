@@ -7,10 +7,6 @@ import org.openqa.selenium.support.PageFactory;
 
 public class CalendarPage extends BasePage{
 
-//    public CalendarPage() {
-//        PageFactory.initElements(Driver.getDriver(), this);
-//    }
-
 
     @FindBy(xpath = "//a[contains(@title, 'Create Calendar')]")
 //    @FindBy(xpath = "//*[@id=\"container\"]/div[2]/div/div/div[2]/div/a")
@@ -35,6 +31,7 @@ public class CalendarPage extends BasePage{
     public WebElement descriptionConfirmation;
 
 
-    
+
+
 
 }
