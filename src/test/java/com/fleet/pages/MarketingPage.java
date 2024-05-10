@@ -9,18 +9,16 @@ import java.util.List;
 
 public class  MarketingPage extends BasePage {
 
-    public MarketingPage (){
-        PageFactory.initElements(Driver.getDriver(),this);
-    }
-
-
-
     @FindBy(xpath = "(//a[@href='javascript:void(0);'])[2]")
     public WebElement manageFiltersButton;
-
 
     @FindBy(xpath = "//ul[@class='ui-helper-reset']")
     public List <WebElement> filtersList;
 
+    @FindBy(xpath = "//select[@data-action='add-filter-select']")
+    public WebElement manageFiltersDropDown;
+
+    @FindBy(xpath = "(//div//a[@href='#']//i)[11]")
+    public WebElement filtersBarButton;
 
 }
