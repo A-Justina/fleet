@@ -11,11 +11,6 @@ import java.util.List;
 public class EditVehiclePage extends BasePage{
 
 
-    public EditVehiclePage(){
-
-        PageFactory.initElements(Driver.getDriver(), this);
-    }
-
 
     @FindBy(xpath = "(//div[@id='main-menu']/ul/li[2]//div/ul/li//span)[3]")
     public WebElement editVehicleManager;
