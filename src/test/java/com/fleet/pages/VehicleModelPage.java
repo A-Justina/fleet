@@ -12,7 +12,7 @@ public class VehicleModelPage extends BasePage {
     @FindBy(xpath = "(//div[@id='main-menu']/ul/li[2]//div/ul/li//span)[9]")
     public WebElement vehicleModelBtnManager;
 
-    @FindBy(xpath = "//div[@id=main-menu]/ul/li[1]/div/div/ul/li[9]/a/span")
+    @FindBy(xpath = "/html/body/div[2]/div[2]/header/div[2]/ul/li[1]/div/div/ul/li[9]/a/span")
     public WebElement vehicleModelBtnDriver;
 
     @FindBy(xpath = "//div[@class='grid-container']//table/thead")
