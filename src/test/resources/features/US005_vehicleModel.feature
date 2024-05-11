@@ -32,7 +32,7 @@ Feature: Vehicle Model Page
      # | Store Manager |
       | Sales Manager |
 
-
+@Vehicle2
   Scenario: Verify that Drivers cannot access the Vehicle Model page and see "You do not have permission to perform this action"
   message on the screen.
     Given the user logged in as "driver"
