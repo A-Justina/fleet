@@ -27,10 +27,11 @@ Feature: Vehicle Model Page
 
 
 
+
     Examples:
       | userType      |
-     # | Store Manager |
-      | Sales Manager |
+      | Store Manager |
+      #| Sales Manager |
 
 @Vehicle2
   Scenario: Verify that Drivers cannot access the Vehicle Model page and see "You do not have permission to perform this action"
