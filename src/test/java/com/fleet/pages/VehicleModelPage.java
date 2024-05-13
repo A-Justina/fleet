@@ -15,7 +15,7 @@ public class VehicleModelPage extends BasePage {
     @FindBy(xpath = "/html/body/div[2]/div[2]/header/div[2]/ul/li[1]/div/div/ul/li[9]/a/span")
     public WebElement vehicleModelBtnDriver;
 
-    @FindBy(xpath = "//div[@class='grid-container']//table/thead")
+    @FindBy(className = "grid-header-cell__label")
     public List<WebElement> vehicleModelColumn;
     @FindBy (xpath = "//div[.='You do not have permission to perform this action.']")
     public WebElement driverErrorMessage;
