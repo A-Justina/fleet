@@ -8,6 +8,7 @@ Feature: Vehicle Model Page
     #Given the user logged in with username as "storemanager51" and password as "UserUser123"
     #Given the user logged in with username as "User1" and password as "UserUser123"
 
+  @AC1
   Scenario Outline: Verify that the Store manager and Sales manager can see ten columns on the
   Vehicle Model page.
     Given the user logged in as "<userType>"
@@ -23,7 +24,7 @@ Feature: Vehicle Model Page
       | CO2 EMISSIONS            |
       | FUEL TYPE                |
       | VENDORS                  |
-
+      | CVVI                     |
 
 
 
@@ -33,7 +34,7 @@ Feature: Vehicle Model Page
       | Store Manager |
       #| Sales Manager |
 
-@Vehicle2
+  @Vehicle2
   Scenario: Verify that Drivers cannot access the Vehicle Model page and see "You do not have permission to perform this action"
   message on the screen.
     Given the user logged in as "driver"
