@@ -7,15 +7,19 @@ import org.openqa.selenium.support.PageFactory;
 
 public class CalendarPage extends BasePage{
 
+    public CalendarPage(){
+        PageFactory.initElements(Driver.getDriver(), this);
+    }
+
 
     @FindBy(xpath = "//a[contains(@title, 'Create Calendar')]")
-//    @FindBy(xpath = "//*[@id=\"container\"]/div[2]/div/div/div[2]/div/a")
+//    @FindBy(xpath = "//*[@id='container']/div[2]/div/div/div[2]/div/a")
     public WebElement createEventBtn;
 
-    @FindBy(xpath = "//*[@id=\"main-menu\"]/ul/li[5]/div/div/ul/li[4]/a/span")
+    @FindBy(xpath = "//div[@id='main-menu']/ul/li[5]/div/div/ul/li[4]/a/span")
     public WebElement calendarEventsManager;
 
-    @FindBy(xpath = "//*[@id=\"main-menu\"]/ul/li[3]/div/div/ul/li[3]/a/span")
+    @FindBy(xpath = "//div[@id='main-menu']/ul/li[3]/div/div/ul/li[3]/a/span")
     public WebElement calendarEventsDriver;
 
     @FindBy(name = "oro_calendar_event_form[title]")
@@ -27,8 +31,14 @@ public class CalendarPage extends BasePage{
     @FindBy(id = "tinymce")
     public WebElement calendarDescriptionInput;
 
-    @FindBy(xpath = "//*[@id=\"tinymce\"]/p")
+    @FindBy(id = "tinymce")
     public WebElement descriptionConfirmation;
+
+    @FindBy(xpath = "//input[starts-with(@id, 'recurrence-repeat-view')]")
+    public WebElement repeatButton;
+
+    @FindBy(xpath = "(//input[@value='1'])[2]")
+    public WebElement repeatEveryButton;
 
 
 
