@@ -3,14 +3,12 @@ package com.fleet.step_definitions;
 import com.fleet.pages.CalendarPage;
 import com.fleet.utilities.BrowserUtils;
 import com.fleet.utilities.Driver;
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
 
-public class US010CalendarEventStepDef {
+public class US010_CalendarEventStepDef {
 
     CalendarPage calendarPage = new CalendarPage();
 
