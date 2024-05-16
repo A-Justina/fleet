@@ -11,7 +11,7 @@ Feature: Odometer functionalities
         And User clicks the Vehicle Odometer button
         Then User sees the error message "You do not have permission to perform this action."
         Examples:
-          | userType |
+          | userType      |
           | Store Manager |
           | Sales Manager |
 

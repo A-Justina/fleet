@@ -2,6 +2,7 @@ package com.fleet.step_definitions;
 
 import com.fleet.pages.VehiclesOdometerPage;
 import com.fleet.utilities.BrowserUtils;
+import com.fleet.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -54,9 +55,11 @@ public class US011_OdometerStepDef {
     @Then("Verify that user sees page as one by default")
     public void verify_that_user_sees_page_as_one_by_default() {
     String expectedPageNumber = "1";
-    String actualPageNumber = vehiclesOdometerPage.defaultPageNumber.getText();
+    String actualPageNumber = vehiclesOdometerPage.defaultPageNumber.getAttribute("value");
 
     Assert.assertEquals(expectedPageNumber, actualPageNumber);
+
+
     }
 
 
