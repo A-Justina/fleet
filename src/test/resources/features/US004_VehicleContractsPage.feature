@@ -1,12 +1,12 @@
 
 @VehCont
 Feature: Users should be able to login
-
+#@B33G10-70
   Background: User is already in the log in page
     Given the user is on the login page
 
 
-
+  @B33G10-67
    Scenario Outline: As a user, I should verify that Store managers and Sales managers can access the Vehicle Contracts
    page.
 
@@ -20,7 +20,7 @@ Feature: Users should be able to login
        | Store Manager |
        | Sales Manager |
 
-
+  @B33G10-68
      Scenario: Verify that Drivers can NOT access the Vehicle Contracts page and the app
      displays “You do not have permission to perform this action.”
        Given the user logged in as "driver"
