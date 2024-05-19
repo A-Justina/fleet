@@ -5,9 +5,9 @@ import com.fleet.utilities.BrowserUtils;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
 
 public class US005_VehicleModelStepDef {
@@ -21,43 +21,59 @@ public class US005_VehicleModelStepDef {
 
         BrowserUtils.hover(vehicleModelPage.fleetBtnManager);
 
-         BrowserUtils.sleep(5);
+        BrowserUtils.sleep(5);
         vehicleModelPage.vehicleModelBtnManager.click();
 
         BrowserUtils.sleep(5);
 
 
     }
+
     @Then("user sees ten columns of {string} page")
-    public void user_sees_ten_columns_of_page(String string, List<String> expectedColumns) {
+    public void user_sees_ten_columns_of_page(String string, List<String> expectedColumnsList) {
         //BrowserUtils.getElementsText(vehicleModelPage.vehicleModelColumn);
-      //String actualColumns = "";
+        //String actualColumns = "";
         //for (String each : BrowserUtils.getElementsText(vehicleModelPage.vehicleModelColumn)) {
-            //actualColumns += each;
-       // }
+        //actualColumns += each;
+        // }
         //BrowserUtils.sleep(5);
         //Assert.assertEquals(actualColumns,expectedColumns);
 
         //for (String each : BrowserUtils.dropdownOptions_as_STRING(vehicleModelPage.vehicleModelColumn)) {
-            //actualColumns += each;
+        //actualColumns += each;
 
-           // List<String> actualColumns_as_WEBELEMENT = BrowserUtils.getElementsText(vehicleModelPage.vehicleModelColumn);
+        // List<String> actualColumns_as_WEBELEMENT = BrowserUtils.getElementsText(vehicleModelPage.vehicleModelColumn);
         //List<String> actualColumns_as_STRING = new ArrayList<>();
 
         //for (String each : actualColumns_as_WEBELEMENT) {
-            //actualColumns_as_STRING.add(each);
+        //actualColumns_as_STRING.add(each);
         //}
 
         //}
 
         //Assert.assertEquals(actualColumns_as_STRING,expectedColumns);
 
-        BrowserUtils.getElementsText(vehicleModelPage.vehicleModelColumn);
-        List<String> actualColumns = BrowserUtils.getElementsText(vehicleModelPage.vehicleModelColumn);
+        ArrayList<String> expected = new ArrayList<>(expectedColumnsList);
+
+        ArrayList<String> actualColumnsList = (ArrayList<String>) BrowserUtils.getElementsText(vehicleModelPage.vehicleModelColumn);
 
         BrowserUtils.sleep(6);
 
-        Assert.assertEquals(expectedColumns,actualColumns);
+        ArrayList<String> actual = new ArrayList<>();
+        for (String each : actualColumnsList) {
+
+            if (each.isEmpty()) {
+                continue;
+            }
+            actual.add(each);
+
+        }
+
+        Assert.assertEquals(expected, actual);
+
+        // for (int i = 0; i < actual.size(); i++) {
+        //      Assert.assertEquals(expected.get(i), actual.get(i));
+        //  }
     }
 
     @When("user hovers over Fleet and clicks Vehicle Model button")
@@ -78,7 +94,7 @@ public class US005_VehicleModelStepDef {
     @Then("user sees {string} message on the screen")
     public void user_sees_message_on_the_screen(String string) {
 
-        String expectedErrorMessage ="You do not have permission to perform this action.";
+        String expectedErrorMessage = "You do not have permission to perform this action.";
         String actualErrorMessage = vehicleModelPage.driverErrorMessage.getText();
         Assert.assertEquals(expectedErrorMessage, actualErrorMessage);
     }

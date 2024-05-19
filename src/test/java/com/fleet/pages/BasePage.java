@@ -59,6 +59,14 @@ public abstract class BasePage {
     @FindBy(xpath = "(//div[@id='main-menu']/ul/li[@class='dropdown dropdown-level-1'])[1]")
     public WebElement fleetBtnDriver;
 
+    @FindBy(xpath = "//i[@class='fa-question-circle']")
+    public WebElement helpButton;
+
+    @FindBy (xpath = "/html/body/div[2]/div[2]/header/div[2]/ul/li[3]/a/span")
+    public WebElement customerTab;
+
+    @FindBy (xpath = "/html/body/div[2]/div[2]/header/div[2]/ul/li[3]/div/div/ul/li[3]/a/span")
+    public WebElement accountBtn;
 
     public BasePage() {
         PageFactory.initElements(Driver.getDriver(), this);
