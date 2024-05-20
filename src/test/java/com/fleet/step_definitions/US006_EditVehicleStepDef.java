@@ -55,6 +55,8 @@ public class US006_EditVehicleStepDef {
     @Then("user should see {string}")
     public void user_should_see(String str, List<String> expectedOpt) {
 
+       // List<String> expectedOptions = new ArrayList<>(expectedOpt);
+
         List<String> expectedOptions = new ArrayList<>();
 
         for (String opt : expectedOpt) {
