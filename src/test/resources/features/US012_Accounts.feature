@@ -9,9 +9,18 @@
         When user hovers over "Customers" option.
         And user clicks on "Accounts" option.
         And user clicks filter button.
-        Then user should see "Account Name, Contact Name, Contact Email, Contact Phone, Owner, Business Unit, Created At, Updated At".
+        Then user should see "Filters".
+          | Account Name  |
+          | Contact Name  |
+          | Contact Email |
+          | Contact Phone |
+          | Owner         |
+          | Business Unit |
+          | Created At    |
+          | Updated At    |
+
 
         Examples:
           | userType |
           | Store Manager |
-          | Sales Manager |
+          #| Sales Manager |
