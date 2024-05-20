@@ -53,14 +53,29 @@ public class US006_EditVehicleStepDef {
 
 
     @Then("user should see {string}")
-    public void user_should_see(String str, List<String> expectedOptions) {
+    public void user_should_see(String str, List<String> expectedOpt) {
+
+        List<String> expectedOptions = new ArrayList<>();
+
+        for (String opt : expectedOpt) {
+            expectedOptions.add(opt);
+        }
 
        // BrowserUtils.waitFor(4);
 
         BrowserUtils.sleep(5);
 
 
-      List<String> actualOptions = editVehiclePage.getElementsAttributes(editVehiclePage.threeDotsOptions);
+      List<String> actual =  (ArrayList<String>) editVehiclePage.getElementsAttributes(editVehiclePage.threeDotsOptions);
+
+      List<String> actualOptions = new ArrayList<>();
+
+        for (String each : actual) {
+            if (each.isEmpty()){
+                continue;
+            }
+            actualOptions.add(each);
+        }
      //   List<String> actualOptions = BrowserUtils.getElementsText(editVehiclePage.threeDotsOptions);
         System.out.println(actualOptions);
 
