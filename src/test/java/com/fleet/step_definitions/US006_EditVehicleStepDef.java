@@ -8,7 +8,9 @@ import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class US006_EditVehicleStepDef {
 
@@ -16,15 +18,23 @@ public class US006_EditVehicleStepDef {
 
 
     @When("user hovers over {string} option")
-    public void user_hovers_over_option(String string) {
+    public void user_hovers_over_option(String userType) {
         editVehiclePage.waitUntilLoaderScreenDisappear();
 
         BrowserUtils.sleep(5);
 
+        if(userType.equalsIgnoreCase("driver")){
+            BrowserUtils.hover(editVehiclePage.fleetBtnDriver);
+        }
+
         BrowserUtils.hover(editVehiclePage.fleetBtnManager);
     }
     @When("user clicks on {string} option")
-    public void user_clicks_on_option(String string) {
+    public void user_clicks_on_option(String userType) {
+
+        if(userType.equalsIgnoreCase("driver")){
+            editVehiclePage.editVehicleDriver.click();
+        }
 
 
         editVehiclePage.editVehicleManager.click();
@@ -40,68 +50,23 @@ public class US006_EditVehicleStepDef {
         BrowserUtils.hover(editVehiclePage.threeDots);
 
     }
+
+
     @Then("user should see {string}")
-    public void user_should_see(String expected) {
+    public void user_should_see(String str, List<String> expectedOptions) {
+
+        BrowserUtils.waitFor(2);
 
 
-        // EditVehiclePage.getElementsAttributes(editVehiclePage.threeDotsOptions);
-//
-//        String actualOptions = "";
-//        String expectedOptions = "view, edit, delete";
+      List<String> actualOptions = editVehiclePage.getElementsAttributes(editVehiclePage.threeDotsOptions);
+     //   List<String> actualOptions = BrowserUtils.getElementsText(editVehiclePage.threeDotsOptions);
+        System.out.println(actualOptions);
 
-
-//        for (WebElement each : editVehiclePage.threeDotsOptions) {
-//
-//            actualOptions += each.getAttribute("title") + ",";
-//
-//        }
-
-
-
-
-//        Assert.assertEquals(actualOptions, expectedOptions);
-
-
-        List<WebElement> actualOptions = editVehiclePage.threeDotsOptions;
-        String actualOptionsString = "";
-
-        for (WebElement each : actualOptions) {
-            actualOptionsString += each.getAttribute("title") + ",";
-        }
-
-
-
-    //    Assert.assertEquals(actualOptionsString.substring(0, actualOptionsString.length() - 1), expected);
-
-        Assert.assertEquals(actualOptionsString, expected);
-
-
-
-
-
-
+        Assert.assertEquals(expectedOptions, actualOptions);
+        BrowserUtils.waitFor(2);
+        System.out.println("iconOptions = " + expectedOptions);
+        System.out.println("actualOptions = " + actualOptions);
     }
-
-
-    @When("driver hovers over {string} option")
-    public void driver_hovers_over_option(String string) {
-
-
-        editVehiclePage.waitUntilLoaderScreenDisappear();
-
-        BrowserUtils.sleep(5);
-
-        BrowserUtils.hover(editVehiclePage.fleetBtnDriver);
-    }
-    @When("driver clicks on {string} option")
-    public void driver_clicks_on_option(String string) {
-
-
-        editVehiclePage.editVehicleDriver.click();
-
-        BrowserUtils.sleep(5);
-    }
-
 
 
 
