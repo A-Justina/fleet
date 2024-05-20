@@ -55,7 +55,9 @@ public class US006_EditVehicleStepDef {
     @Then("user should see {string}")
     public void user_should_see(String str, List<String> expectedOptions) {
 
-        BrowserUtils.waitFor(2);
+       // BrowserUtils.waitFor(4);
+
+        BrowserUtils.sleep(5);
 
 
       List<String> actualOptions = editVehiclePage.getElementsAttributes(editVehiclePage.threeDotsOptions);
