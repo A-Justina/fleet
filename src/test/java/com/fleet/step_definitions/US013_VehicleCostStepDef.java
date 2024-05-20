@@ -1,7 +1,9 @@
 package com.fleet.step_definitions;
 
+import com.fleet.pages.BasePage;
 import com.fleet.pages.VehicleCostPage;
 import com.fleet.utilities.BrowserUtils;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -15,41 +17,39 @@ public class US013_VehicleCostStepDef {
 VehicleCostPage vehicleCostPage = new VehicleCostPage();
 
 
-    @When("User clicks on {string} option")
-    public void user_clicks_on_option(String string) {
-        BrowserUtils.hover(vehicleCostPage.VehicleCostBtn);
-        vehicleCostPage.VehicleCostBtn.click();
-
+    @And("User clicks on {string} option.")
+    public void userClicksOnOption(String arg0) {
+        BrowserUtils.sleep(5);
+        BrowserUtils.hover(vehicleCostPage.vehicleCostBtn);
+        BrowserUtils.sleep(5);
+        vehicleCostPage.vehicleCostBtn.click();
+        //Here I'm hover the fleet option, and then it finds vehicle cost btn and click on it.
     }
-    @Then("User should see {string}")
-    public void user_should_see(List<String> expectedColumns) {
-        ArrayList <String> expected = new ArrayList<>(expectedColumns);
-        ArrayList <String> actualColumns = (ArrayList<String>) BrowserUtils.getElementsText((List<WebElement>) vehicleCostPage.VehicleCostColumn);
-        ArrayList <String> actual = new ArrayList<>();
-        for (String each: actualColumns){
-            if (each.isEmpty()){
+
+    @Then("User should see {string}.")
+    public void userShouldSee(String str, List<String> expected) {
+        List<String> expectedColumns = new ArrayList<>(expected);
+
+
+
+        BrowserUtils.sleep(5);
+        List<String> actualColumns = new ArrayList<>();
+        for (String each : BrowserUtils.getElementsText(vehicleCostPage.vehicleCostColumn)) {
+            if (each.isEmpty()) {
                 continue;
             }
-            actual.add(each);
+            actualColumns.add(each);
         }
-        Assert.assertEquals(expected,actual);
-
-
+        BrowserUtils.sleep(5);
+        Assert.assertTrue(actualColumns.contains(expectedColumns));
     }
 
-    @Given("The user logged in as {string}")
-    public void the_user_logged_in_as(String string) {
-
-    }
-    @When("User hovers {string} option")
-    public void user_hovers_option(String string) {
-
-    }
 
     @Then("User should be able to check the first checkbox to select all vehicle costs.")
     public void user_should_be_able_to_check_the_first_checkbox_to_select_all_vehicle_costs() {
+        vehicleCostPage.checkboxBtn.click();
+        Assert.assertTrue(vehicleCostPage.checkboxBtn.isSelected());
 
     }
-
 
 }
