@@ -39,7 +39,7 @@ public class US012_AccountsStepDef extends BasePage {
     public void user_should_see(String str, List<String> expected) {
         List<String> expectedFilters = new ArrayList<>(expected);
 
-        List<String> listOfFilters = BrowserUtils.getElementsText(accountsPage.filterContainer);
+        List<String> listOfFilters = BrowserUtils.getElementsText(accountsPage.filterRow);
        List <String> actualFilters = new ArrayList<>();
         for (String each : listOfFilters) {
             if(each.isEmpty()){
@@ -48,7 +48,9 @@ public class US012_AccountsStepDef extends BasePage {
             actualFilters.add(each);
         }
 
-        Assert.assertEquals(expectedFilters, actualFilters);
+       Assert.assertEquals(expectedFilters, actualFilters);
+
+
 
         }
 

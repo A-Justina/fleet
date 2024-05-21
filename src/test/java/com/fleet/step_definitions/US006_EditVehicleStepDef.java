@@ -21,7 +21,6 @@ public class US006_EditVehicleStepDef {
     public void user_hovers_over_option(String userType) {
         editVehiclePage.waitUntilLoaderScreenDisappear();
 
-        BrowserUtils.sleep(5);
 
         if(userType.equalsIgnoreCase("driver")){
             BrowserUtils.hover(editVehiclePage.fleetBtnDriver);
@@ -39,13 +38,11 @@ public class US006_EditVehicleStepDef {
 
         editVehiclePage.editVehicleManager.click();
 
-        BrowserUtils.sleep(5);
 
     }
     @When("user hovers over {int} dots")
     public void user_hovers_over_dots(Integer int1) {
 
-        BrowserUtils.sleep(5);
 
         BrowserUtils.hover(editVehiclePage.threeDots);
 
@@ -55,36 +52,19 @@ public class US006_EditVehicleStepDef {
     @Then("user should see {string}")
     public void user_should_see(String str, List<String> expectedOpt) {
 
-       // List<String> expectedOptions = new ArrayList<>(expectedOpt);
 
-        List<String> expectedOptions = new ArrayList<>();
-
-        for (String opt : expectedOpt) {
-            expectedOptions.add(opt);
-        }
-
-       // BrowserUtils.waitFor(4);
-
-        BrowserUtils.sleep(5);
-
-
-      List<String> actual =  (ArrayList<String>) editVehiclePage.getElementsAttributes(editVehiclePage.threeDotsOptions);
 
       List<String> actualOptions = new ArrayList<>();
 
-        for (String each : actual) {
-            if (each.isEmpty()){
-                continue;
-            }
-            actualOptions.add(each);
-        }
-     //   List<String> actualOptions = BrowserUtils.getElementsText(editVehiclePage.threeDotsOptions);
-        System.out.println(actualOptions);
 
-        Assert.assertEquals(expectedOptions, actualOptions);
-        BrowserUtils.waitFor(2);
-        System.out.println("iconOptions = " + expectedOptions);
-        System.out.println("actualOptions = " + actualOptions);
+     actualOptions.add(editVehiclePage.view.getAttribute("title"));
+     actualOptions.add(editVehiclePage.edit.getAttribute("title"));
+     actualOptions.add(editVehiclePage.delete.getAttribute("title"));
+
+
+
+        Assert.assertEquals(expectedOpt,actualOptions);
+
     }
 
 
