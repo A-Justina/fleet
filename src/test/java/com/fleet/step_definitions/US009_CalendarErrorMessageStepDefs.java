@@ -41,10 +41,17 @@ public class US009_CalendarErrorMessageStepDefs {
                 String actualError = calendarErrorMessagesPage.lessThanOneError.getText();
 
                 Assert.assertTrue(expectedError.equals(actualError));
-            } else {
+            } else if (invalidInput > 99){
 
                 String expectedError = "The value have not to be more than 99.";
                 String actualError = calendarErrorMessagesPage.moreThanNinetyNineError.getText();
+
+                Assert.assertTrue(expectedError.equals(actualError));
+
+            }else{
+
+                String expectedError = "Please enter a valid number.";
+                String actualError = calendarErrorMessagesPage.invalidInput.getText();
 
                 Assert.assertTrue(expectedError.equals(actualError));
 
