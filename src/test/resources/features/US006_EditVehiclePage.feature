@@ -21,5 +21,5 @@ Feature: Default
     Examples:
       | userType      |
       | store manager |
-  #    | sales manager |
-  #    | driver        |
+      | sales manager |
+      | driver        |

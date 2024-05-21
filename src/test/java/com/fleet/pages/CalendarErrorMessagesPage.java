@@ -20,5 +20,9 @@ public class CalendarErrorMessagesPage extends BasePage{
     public WebElement moreThanNinetyNineError;
 
 
+    @FindBy(xpath = "//span[text()='Please enter a valid number.']")
+    public WebElement invalidInput;
+
+
 
 }

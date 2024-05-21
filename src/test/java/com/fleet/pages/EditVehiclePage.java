@@ -26,7 +26,7 @@ public class EditVehiclePage extends BasePage{
 
     // @FindBy(xpath = "(//div[@class='dropdown'])[1]")
 
-    @FindBy(xpath = "(//div[@class='dropdown'])[1]//li[@class='launcher-item']//a")
+    @FindBy(xpath = "//ul[@class='dropdown-menu dropdown-menu__action-cell launchers-dropdown-menu']/li/ul/li[@class='launcher-item']/a")
 
     public List<WebElement> threeDotsOptions;
 
